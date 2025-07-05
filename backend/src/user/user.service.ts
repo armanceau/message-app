@@ -1,7 +1,8 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 @Injectable()
 export class UserService {
@@ -22,8 +23,22 @@ export class UserService {
     });
   }
 
-  createUser(data: { username: string; password: string; email?: string }) {
-      return this.prisma.user.create({ data });
+  async createUser(data: { username: string; password: string; email?: string }) {
+    try{
+      return await this.prisma.user.create({ data });
+    }
+    catch(error){
+      if (
+      error instanceof PrismaClientKnownRequestError &&
+      error.code === 'P2002'
+    ) {
+      throw new ConflictException({
+        message: "Nom d'utilisateur déjà utilisé",
+        code: "USERNAME_TAKEN",
+      });
+    }
+    throw error;
+  }
   }
 
   async login(username: string, password: string) {

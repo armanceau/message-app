@@ -13,11 +13,11 @@ export default function Router() {
         {/* Routes publiques */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/settings" element={<ParameterPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
         {/* Routes privées protégées */}
         <Route element={<RequireAuth />}>
           <Route path="/*" element={<App />} />
+          <Route path="/profil" element={<ProfilePage />} />
+          <Route path="/settings" element={<ParameterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -17,18 +17,18 @@ export default function VerticalTaskBar() {
 
   const handleClick = (id: number, path: string) => {
     if (id === 3) {
-    handleLogout();
-  } else {
-    setSelected(id);
-    navigate(path);
-  }
-  }
+      handleLogout();
+    } else {
+      setSelected(id);
+      navigate(path);
+    }
+  };
 
   const icons = [
     { id: 0, component: <Chat size={20} />, path: "/home" },
-    { id: 1, component: <Person size={20} />, path: "/profile" },
+    { id: 1, component: <Person size={20} />, path: "/profil" },
     { id: 2, component: <Gear size={20} />, path: "/settings" },
-    { id: 3, component: <BoxArrowLeft size={20} />, path: "/logout"  },
+    { id: 3, component: <BoxArrowLeft size={20} />, path: "/logout" },
   ];
 
   return (
