@@ -4,8 +4,12 @@ import { Chat, Person, Gear, BoxArrowLeft } from "react-bootstrap-icons";
 import styles from "./verticalTaskBar.module.css";
 import { useApolloClient } from "@apollo/client";
 
-export default function VerticalTaskBar() {
-  const [selected, setSelected] = useState<number>(0);
+type Props = {
+  currentNumber: number;
+};
+
+export default function VerticalTaskBar({ currentNumber }: Props) {
+  const [selected, setSelected] = useState<number>(currentNumber);
   const navigate = useNavigate();
   const client = useApolloClient();
 

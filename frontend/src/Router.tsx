@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login-form/LoginForm";
 import Register from "./components/register-form/RegisterForm";
 import ProfilePage from "./components/side-pages/profilPage";
-import ParameterPage from "./components/side-pages/parameterPage";
+import ParameterPage from "./components/settings-page/SettingsPage";
 import App from "./App";
 import { RequireAuth } from "./RequireAuth";
 

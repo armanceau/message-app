@@ -50,9 +50,9 @@ export default function ProfilePage() {
 
   const user = data?.user;
 
-   return (
+  return (
     <div className={styles.layout}>
-      <VerticalTaskBar />
+      <VerticalTaskBar currentNumber={1} />
       <div className={styles.profileContainer}>
         <h1 className={styles.title}>Profil utilisateur</h1>
 
@@ -60,14 +60,25 @@ export default function ProfilePage() {
 
         {user ? (
           <div className={styles.card}>
-            <p><strong>Nom d'utilisateur :</strong> {user.username}</p>
-            <p><strong>ID :</strong> {user.id}</p>
-            <p><strong>Créé le :</strong> {new Date(user.createdAt).toLocaleString()}</p>
+            <p>
+              <strong>Nom d'utilisateur :</strong> {user.username}
+            </p>
+            <p>
+              <strong>ID :</strong> {user.id}
+            </p>
+            <p>
+              <strong>Créé le :</strong>{" "}
+              {new Date(user.createdAt).toLocaleString()}
+            </p>
           </div>
         ) : decoded ? (
           <div className={styles.card}>
-            <p><strong>Nom d'utilisateur (JWT) :</strong> {decoded.username}</p>
-            <p><strong>ID (JWT) :</strong> {decoded.sub}</p>
+            <p>
+              <strong>Nom d'utilisateur (JWT) :</strong> {decoded.username}
+            </p>
+            <p>
+              <strong>ID (JWT) :</strong> {decoded.sub}
+            </p>
           </div>
         ) : (
           <p className={styles.error}>Aucun utilisateur authentifié.</p>
