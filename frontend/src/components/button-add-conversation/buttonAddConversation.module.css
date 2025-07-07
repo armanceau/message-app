@@ -1,20 +1,8 @@
 .button {
-  padding: 10px 20px;
-  border-radius: 2em;
-  background-color: #000000;
-  color: white;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
   border: none;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: inherit;
-  transition: background-color 0.3s ease;
-  width: fit-content;
-}
-
-.button:hover {
-  background-color: #0056b3;
 }
 
 .icon {
@@ -22,4 +10,21 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+}
+
+.select {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+  background-color: var(--button-secondary-bg);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border-radius: 2em;
+  padding: 5px 15px;
+  gap: 8px;
 }

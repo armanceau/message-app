@@ -4,7 +4,7 @@ section {
   gap: 20px;
   padding: 0.5em;
   border-right: 1px solid #e0e0e0;
-  background-color: #ffffff;
+  background-color: var(--bg-color);
 }
 
 .section-icon {
@@ -16,20 +16,20 @@ section {
   border-radius: 50%;
   cursor: pointer;
   transition: 0.5s;
-  color: #000000;
+  color: var(--text-color);
 }
 
 .selected {
-  background-color: black;
-  color: white;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
 }
 
 .section-icon:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
 }
 
 .logout:hover {
   background-color: #ff4d4f;
-  color: white;
+  color: var(--button-secondary-text);
 }

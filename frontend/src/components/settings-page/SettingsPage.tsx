@@ -1,7 +1,9 @@
 import styles from "./settingsPage.module.css";
 import VerticalTaskBar from "../vertical-task-bar/VerticalTaskBar";
+import { useTheme } from "../context/ThemeContext";
 
 export default function SettingsPage() {
+  const { theme, toggleTheme } = useTheme();
   return (
     <div className={styles.layout}>
       <VerticalTaskBar currentNumber={2} />
@@ -23,8 +25,10 @@ export default function SettingsPage() {
         <section className={styles.section}>
           <h2>Préférences</h2>
           <label className={styles.switchLabel}>
-            <input type="checkbox" className={styles.switch} disabled />
-            Activer le thème sombre (bientôt dispo)
+            <button onClick={toggleTheme}>
+              {theme === "light" ? "🌙" : "☀️"} Thème :{" "}
+              {theme === "light" ? "sombre" : "clair"}
+            </button>
           </label>
           <label className={styles.switchLabel}>
             <input type="checkbox" className={styles.switch} disabled />

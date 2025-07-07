@@ -13,7 +13,7 @@
 .title {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #000000;
+  color: var(--text-color);
 }
 
 .section {
@@ -21,8 +21,8 @@
   padding: 1rem 1.5rem;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: var(--bg-color, #f9f9f9);
-  color: #000000;
+  background-color: var(--section-bg);
+  color: var(--text-color);
 }
 
 .select {
@@ -35,7 +35,7 @@
 
 .note {
   font-size: 0.9rem;
-  color: gray;
+  color: var(--text-muted-color);
   margin-top: 0.5rem;
 }
 

@@ -55,13 +55,13 @@ export default function ButtonAddConversation({
   };
 
   return (
-    <div>
+    <div className={styles.main}>
       <select
         className={styles.select}
         value={selectedUserId}
         onChange={(e) => setSelectedUserId(e.target.value)}
       >
-        <option value="">-- Choisir un utilisateur --</option>
+        <option value="">Choisir un utilisateur</option>
         {availableUsers.map((user) => (
           <option key={user.id} value={user.id}>
             {user.username}
@@ -70,7 +70,7 @@ export default function ButtonAddConversation({
       </select>
 
       <button onClick={handleAddConversation} className={styles.button}>
-        Nouvelle conversation <Plus className={styles.icon} />
+        <Plus className={styles.icon} />
       </button>
     </div>
   );
