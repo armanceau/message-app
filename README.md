@@ -156,5 +156,5 @@ npx cypress open
 * Upload de fichiers (images, etc.)
 
 ## Auteurs
-[Arthur Manceau](https://github.com/armanceau) | [Guillaume Le Formal](https://github.com/gyom2003) | [Noémie Ktourza](https://github.com/Noemiektz) | [Rayane Besrour](https://github.com/Rayane-94)
+[Arthur Manceau](https://github.com/armanceau)
 
